@@ -16,7 +16,7 @@
 
 #### 1、作用
 
-> <jsp:include>动作元素用来包含静态和动态的文件。该动作把指定文件插入正在生成的页面。
+> jsp:include动作元素用来包含静态和动态的文件。该动作把指定文件插入正在生成的页面。
 
 #### 2、语法格式
 
@@ -63,9 +63,9 @@
 
 #### 5、jsp:include与include指令
 
-> 1. <jsp:include>标签是动态引入， <jsp:include>标签涉及到的2个JSP页面会被翻译成2个servlet，这2个servlet的内容在执行时进行合并。 
+> 1. jsp:include标签是动态引入， jsp:include标签涉及到的2个JSP页面会被翻译成2个servlet，这2个servlet的内容在执行时进行合并。 
 > 2. 而include指令是静态引入，涉及到的2个JSP页面会被翻译成一个servlet，其内容是在源文件级别进行合并。
-> 3. 不管是<jsp:include>标签，还是include指令，它们都会把两个JSP页面内容合并输出，所以这两个页面不要出现重复的HTML全局架构标签，否则输出给客户端的内容将会是一个格式混乱的HTML文档。
+> 3. 不管是jsp:include标签，还是include指令，它们都会把两个JSP页面内容合并输出，所以这两个页面不要出现重复的HTML全局架构标签，否则输出给客户端的内容将会是一个格式混乱的HTML文档。
 
 
 
@@ -113,7 +113,7 @@
 
 #### 1、作用
 
-> 当使用<jsp:include>和<jsp:forward>标签引入或将请求转发给其它资源时，可以使用<jsp:param>标签向这个资源传递参数。
+> 当使用jsp:include和jsp:forward标签引入或将请求转发给其它资源时，可以使用jsp:param标签向这个资源传递参数。
 
 #### 2、语法格式1：
 
