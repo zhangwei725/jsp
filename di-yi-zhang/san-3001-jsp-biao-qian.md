@@ -12,7 +12,7 @@
 
 ## 二、常用动作元素
 
-### 2.1、 <jsp:include>
+### 2.1、 jsp:include
 
 #### 1、作用
 
@@ -61,11 +61,13 @@
    </html>
    ```
 
-#### 5、<jsp:include>与include指令
+#### 5、jsp:include与include指令
 
-1. <jsp:include>标签是动态引入， <jsp:include>标签涉及到的2个JSP页面会被翻译成2个servlet，这2个servlet的内容在执行时进行合并。 
-2. 而include指令是静态引入，涉及到的2个JSP页面会被翻译成一个servlet，其内容是在源文件级别进行合并。
-3. 不管是<jsp:include>标签，还是include指令，它们都会把两个JSP页面内容合并输出，所以这两个页面不要出现重复的HTML全局架构标签，否则输出给客户端的内容将会是一个格式混乱的HTML文档。
+> 1. <jsp:include>标签是动态引入， <jsp:include>标签涉及到的2个JSP页面会被翻译成2个servlet，这2个servlet的内容在执行时进行合并。 
+> 2. 而include指令是静态引入，涉及到的2个JSP页面会被翻译成一个servlet，其内容是在源文件级别进行合并。
+> 3. 不管是<jsp:include>标签，还是include指令，它们都会把两个JSP页面内容合并输出，所以这两个页面不要出现重复的HTML全局架构标签，否则输出给客户端的内容将会是一个格式混乱的HTML文档。
+
+
 
 ### 2.2、jsp:forward标签  
 
