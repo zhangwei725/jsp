@@ -4,7 +4,7 @@
 
 > JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。
 >
-> JSP指令的基本语法格式：<%@ 指令 属性名="值" %> 
+> JSP指令的基本语法格式：&lt;%@ 指令 属性名="值" %&gt;
 >
 > 在JSP2.0规范中共定义了三个指令：page指令  Include指令 taglib指令
 
@@ -12,25 +12,25 @@
 
 ### 1、定义
 
-> page指令用于定义JSP页面的各种属性，无论page指令出现在JSP页面中的什么地方，它作用的	都是整个JSP页面，为了保持程序的可读性和遵循良好的编程习惯，page指令最好是放在整个JSP页面的起始位置。
+> page指令用于定义JSP页面的各种属性，无论page指令出现在JSP页面中的什么地方，它作用的    都是整个JSP页面，为了保持程序的可读性和遵循良好的编程习惯，page指令最好是放在整个JSP页面的起始位置。
 
 ### 2、完整语法
 
-> <%@ page 
-> [ language="java" ] 
-> [ extends="package.class" ] 
-> [ import="{package.class | package.*}, ..." ] 
-> [ session="true | false" ] 
-> [ buffer="none | 8kb | sizekb" ] 
-> [ autoFlush="true | false" ] 
-> [ isThreadSafe="true | false" ] 
-> [ info="text" ] 
-> [ errorPage="relative_url" ] 
-> [ isErrorPage="true | false" ] 
-> [ contentType="mimeType [ ;charset=characterSet ]" | "text/html ; charset=UTF-8" ] 
-> [ pageEncoding="characterSet | UTF-8"" ] 
-> [ isELIgnored="true | false" ] 
-> %>
+> &lt;%@ page   
+> \[ language="java" \]   
+> \[ extends="package.class" \]   
+> \[ import="{package.class \| package.\*}, ..." \]   
+> \[ session="true \| false" \]   
+> \[ buffer="none \| 8kb \| sizekb" \]   
+> \[ autoFlush="true \| false" \]   
+> \[ isThreadSafe="true \| false" \]   
+> \[ info="text" \]   
+> \[ errorPage="relative\_url" \]   
+> \[ isErrorPage="true \| false" \]   
+> \[ contentType="mimeType \[ ;charset=characterSet \]" \| "text/html ; charset=UTF-8" \]   
+> \[ pageEncoding="characterSet \| UTF-8"" \]   
+> \[ isELIgnored="true \| false" \]   
+> %&gt;
 
 ### 3、指令详解
 
@@ -66,11 +66,11 @@
    >
    > 2、contentType的charset是指服务器发送给客户端时的内容编码
    >
-   > 3、执行过程
-   > JSP要经过两次的“编码”，第一阶段会用pageEncoding，第二阶段会用utf-8至utf-8，第三阶段就是由Tomcat出来的网页， 用的是contentType。
-   > 第一阶段是jsp编译成.java，它会根据pageEncoding的设定读取jsp，结果是由指定的编码方案翻译成统一的UTF-8 JAVA源码（即.java），如果pageEncoding设定错了，或没有设定，出来的就是中文乱码。
-   > 第二阶段是由JAVAC的JAVA源码至java byteCode的编译，不论JSP编写时候用的是什么编码方案，经过这个阶段的结果全部是UTF-8的encoding的java源码。
-   > JAVAC用UTF-8的encoding读取java源码，编译成UTF-8 encoding的二进制码（即.class），这是JVM对常数字串在二进制码（java encoding）内表达的规范。
+   > 3、执行过程  
+   > JSP要经过两次的“编码”，第一阶段会用pageEncoding，第二阶段会用utf-8至utf-8，第三阶段就是由Tomcat出来的网页， 用的是contentType。  
+   > 第一阶段是jsp编译成.java，它会根据pageEncoding的设定读取jsp，结果是由指定的编码方案翻译成统一的UTF-8 JAVA源码（即.java），如果pageEncoding设定错了，或没有设定，出来的就是中文乱码。  
+   > 第二阶段是由JAVAC的JAVA源码至java byteCode的编译，不论JSP编写时候用的是什么编码方案，经过这个阶段的结果全部是UTF-8的encoding的java源码。  
+   > JAVAC用UTF-8的encoding读取java源码，编译成UTF-8 encoding的二进制码（即.class），这是JVM对常数字串在二进制码（java encoding）内表达的规范。  
    > 第三阶段是Tomcat（或其的application container）载入和执行阶段二的来的JAVA二进制码，输出的结果，也就是在客户端见到的，这时隐藏在阶段一和阶段二的参数contentType就发挥了功效
 
 #### 3.2、import
@@ -144,16 +144,16 @@
    >        <exception-type>Exception</exception-type>  
    >        <location>/error.jsp</location>  
    >     </error-page> 
-   >     
+   >  
    >     <error-page>  
    >       <error-code>404</error-code>  
    >       <location>/error.jsp</location>  
    >     </error-page>  
-   >     
+   >  
    >     <error-page> 
-   >     	<error-code>500</error-code>  
-   >     	<location>/error.jsp</location> 
-   >     </error-page> 
+   >         <error-code>500</error-code>  
+   >         <location>/error.jsp</location> 
+   >     </error-page>
    >    ```
 
 #### 3.6、 isErrorPages
@@ -165,14 +165,14 @@
 2. 语法格式
 
    ```
-   <@ page isErrorPages="false|true"%> 
+   <@ page isErrorPages="false|true"%>
    ```
 
 3. 示例代码
 
    ```
    //禁用错误界面
-   <@ page isErrorPages="false" %> 
+   <@ page isErrorPages="false" %>
    ```
 
 #### 3.7、isELIgnored
@@ -196,7 +196,7 @@
 
 #### 3.8、注意
 
->  如果一个指令有多个属性，这多个属性可以写在一个指令中，也可以分开写。
+> 如果一个指令有多个属性，这多个属性可以写在一个指令中，也可以分开写。
 
 ## 三. Include指令
 
@@ -205,3 +205,6 @@
 ## 四.taglib指令
 
 > 这个指令作用也是很简单的，就是引入标签 jstl
+
+
+
