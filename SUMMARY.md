@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [简介](README.md)
 * [第一章](di-yi-zhang.md)
   * [一、基础语法](di-yi-zhang/yi-3001-ji-chu-yu-fa.md)
   * [二、JSP指令](di-yi-zhang/er-3001-jsp-zhi-ling.md)
