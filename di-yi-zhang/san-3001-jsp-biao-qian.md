@@ -134,7 +134,8 @@
 #### 4、说明
 
 ```
-<jsp:param>标签的name属性用于指定参数名，value属性用于指定参数值。在<jsp:include>和<jsp:forward>标签中可以使用多个<jsp:param>标签来传递多个参数
+<jsp:param>标签的name属性用于指定参数名，value属性用于指定参数值。
+在<jsp:include>和<jsp:forward>标签中可以使用多个<jsp:param>标签来传递多个参数
 ```
 
 ## 三、总结
