@@ -6,11 +6,11 @@
 
 ## 二、JSP中的三种指令标签：
 
-| **指令** | **描述** |
-| --- | --- |
-| &lt;%@ page ... %&gt; | 定义网页依赖属性，比如脚本语言、error页面、缓存需求等等 |
-| &lt;%@ include ... %&gt; | 包含其他文件 |
-| &lt;%@ taglib ... %&gt; | 引入标签库的定义 |
+| **指令**                   | **描述**                         |
+| ------------------------ | ------------------------------ |
+| &lt;%@ page ... %&gt;    | 定义网页依赖属性，比如脚本语言、error页面、缓存需求等等 |
+| &lt;%@ include ... %&gt; | 包含其他文件                         |
+| &lt;%@ taglib ... %&gt;  | 引入标签库的定义                       |
 
 ## 三、page指令
 
@@ -27,15 +27,15 @@
 
 ### 3、其中常见的属性如下：
 
-> | 属性 | 描述 | 默认值 |
-> | --- | --- | --- |
-> | import | 通过该属性来引用脚本语言中使用到的类文件 | 无 |
-> | contentType | 用来指定JSP页面所采用的编码方式 | text/html; ISO-8859-1 |
-> | session | 指定JSP页面是否使用session | true |
-> | isELIgnored | 指定是否执行EL表达式 | true |
-> | isErrorPage | 指定当前页面是否可以作为另一个JSP页面的错误处理页面 | false |
-> | errorPage | 指定当JSP页面发生异常时需要转向的错误处理页面 | 无 |
-> | pageEncoding | 是jsp文件编译成servlet的编码格式 | 无 |
+> | 属性           | 描述                          | 默认值                   |
+> | ------------ | --------------------------- | --------------------- |
+> | import       | 通过该属性来引用脚本语言中使用到的类文件        | 无                     |
+> | contentType  | 用来指定JSP页面所采用的编码方式           | text/html; ISO-8859-1 |
+> | session      | 指定JSP页面是否使用session          | true                  |
+> | isELIgnored  | 指定是否执行EL表达式                 | true                  |
+> | isErrorPage  | 指定当前页面是否可以作为另一个JSP页面的错误处理页面 | false                 |
+> | errorPage    | 指定当JSP页面发生异常时需要转向的错误处理页面    | 无                     |
+> | pageEncoding | 是jsp文件编译成servlet的编码格式       | 无                     |
 
 ### 4、指令详解
 
@@ -151,14 +151,7 @@
 1. 引入jstl
 
    ```
-
-
-   <
-   %@taglib  uri="http://java.sun.com/jstl/core" prefix="c"%
-   >
+   <%@taglib  uri="http://java.sun.com/jstl/core" prefix="c"%>   
    ```
-
-​
-
 
 
