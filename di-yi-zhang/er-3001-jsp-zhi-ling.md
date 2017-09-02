@@ -39,17 +39,17 @@
 
 ### 4、指令详解
 
-#### 1、import属性
+#### 1、import
 
 > page指令中唯一容许在同一文档出现多次的属性。属性的值可以以逗号隔开。
 >
 > 指定jsp页面转换成servlet应该输入的包。对于没有明确指定包的类，将根据jsp页面所在的包\(生成的servlet的目录\)决定类的包的位置。
 
-#### 2、language属性：
+#### 2、language
 
 > 用于指定在脚本元素中使用的脚本语言，默认java。在jsp2.0规范中，只能是java。
 
-#### 3、contentType和pageEncodeing属性：
+#### 3、contentType和pageEncodeing
 
 > contentType属性设置发送到客户端文档的响应报头的MIME类型和字符编码。多个使用;号分开。pageEncodeing属性只用于更改字符编码。
 >
