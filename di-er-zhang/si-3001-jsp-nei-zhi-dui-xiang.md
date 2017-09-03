@@ -30,6 +30,8 @@
    | page | java.lang.Object | 同Java中的this，即JSP页面本身 |
    | config | javax.servlet.servletConfig | Servlet的配置对象 |
 
+## 
+
 ## 三、详解
 
 ### 1、request 对象\(重点\)
