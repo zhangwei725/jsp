@@ -313,7 +313,7 @@ int getRemaining( )取得目前使用后还剩下的缓冲区大小(KB)
 boolean isAutoFlush( )回传true表示缓冲区满时会自动清除;false表示不会自动清除并且产生异常处理
 ```
 
-### 6、session 对象
+### 6、session 对象\(重点\)
 
 > session对象表示目前个别用户的会话\(session\)状况。
 >
