@@ -29,7 +29,6 @@
    | pageContext | javax.servlet.jsp.PageContext | JSP页面的上下文，用于访问页面属性 |
    | page | java.lang.Object | 同Java中的this，即JSP页面本身 |
    | config | javax.servlet.servletConfig | Servlet的配置对象 |
-   | exception | java.lang.Throwable | 针对错误网页，捕捉一般网页中未捕捉的异常 |
 
 ## 三、详解
 
@@ -334,7 +333,7 @@ boolean isAutoFlush( )回传true表示缓冲区满时会自动清除;false表示
 >
 > void setMaxInactiveInterval\(int interval\)设定最大session不活动的时间，若超过这时间，session 将会失效
 
-### 7、application对象
+### 7、application对象\(重点\)
 
 #### 7.1 概要
 
