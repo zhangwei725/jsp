@@ -9,5 +9,4 @@
   * [四、JSP内置对象](di-er-zhang/si-3001-jsp-nei-zhi-dui-xiang.md)
   * [五、EL表达式](di-er-zhang/wu-3001-el-biao-da-shi.md)
   * [六、JSTL](di-er-zhang/liu-3001-jstl.md)
-* [第三章](di-san-zhang.md)
 
