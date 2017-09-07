@@ -7,13 +7,13 @@
 > EL表达式是JSP 2.0规范中的一门技术 。因此，若想正确解析EL表达式，需使用支持Servlet2.4/JSP2.0技术的WEB服务器。
 >
 > 1. 升级成tomcat6
-> 2. 在JSP中加入<%@ page isELIgnored="false" %>
+> 2. 在JSP中加入&lt;%@ page isELIgnored="false" %&gt;
 
 ## 二、作用
 
 ### 1、获取数据
 
-> EL表达式主要用于替换JSP页面中的脚本表达式，以从各种类型的web域 中检索java对象、获取数据。(某个web域 中的对象，访问javabean的属性、访问list集合、访问map集合、访问数组)
+> EL表达式主要用于替换JSP页面中的脚本表达式，以从各种类型的web域 中检索java对象、获取数据。\(某个web域 中的对象，访问javabean的属性、访问list集合、访问map集合、访问数组\)
 
 ### 2、执行运算
 
@@ -33,14 +33,14 @@
 
 > ${expression}
 
-### 2、[ ]与.运算符
+### 2、\[ \]与.运算符
 
 1. 概要
 
-   > EL 提供“.“和“[ ]“两种运算符来存取数据。
+   > EL 提供“.“和“\[ \]“两种运算符来存取数据。
    >
-   > 1. 当要存取的属性名称中包含一些特殊字符，如 . 或 ? 等并非字母或数字的符号，就一定要使用“[ ]“。
-   > 2. 如果要动态取值时，就可以用“[ ]“来做，而“.“无法做到动态取值。
+   > 1. 当要存取的属性名称中包含一些特殊字符，如 . 或 ? 等并非字母或数字的符号，就一定要使用“\[ \]“。
+   > 2. 如果要动态取值时，就可以用“\[ \]“来做，而“.“无法做到动态取值。
 
 2. 示例代码
 
@@ -63,7 +63,7 @@
 
    > EL存取变量数据的方法很简单，例如：${username}。它的意思是取出某一范围中名称为username的变量
    >
-   > 如果没有指定哪一个范围的username，所以它会依序从Page、Request、Session、Application范围查找。
+   > 如果没有指定哪一个范围的username，所以它会依序从Page、Request、Session、Application范围查找。  
    > 假如途中找到username，就直接回传，不再继续找下去，但是假如全部的范围都没有找到时，就回传空字符串
 
 2. 示例代码
@@ -193,13 +193,13 @@
 
    > 一个EL表达式包含变量、文字常量、操作符。文字常量主要包括字符串、数字和布尔值、还有NULL
 
-   | 文字             | 文字的值                                     |
-   | -------------- | ---------------------------------------- |
-   | Boolean        | true 和 false                             |
-   | Integer        | 与 Java 类似。可以包含任何正数或负数，例如 100、-200、10000  |
+   | 文字 | 文字的值 |
+   | --- | --- |
+   | Boolean | true 和 false |
+   | Integer | 与 Java 类似。可以包含任何正数或负数，例如 100、-200、10000 |
    | Floating Point | 与 Java 类似。可以包含任何正的或负的浮点数，例如 -1.6E-45、3.1415 |
-   | String         | 任何由单引号或双引号限定的字符串。对于单引号、双引号和反斜杠，使用反斜杠字符作为转义序列。必须注意，如果在字符串两端使用双引号，则单引号不需要转义。 |
-   | Null           | null                                     |
+   | String | 任何由单引号或双引号限定的字符串。对于单引号、双引号和反斜杠，使用反斜杠字符作为转义序列。必须注意，如果在字符串两端使用双引号，则单引号不需要转义。 |
+   | Null | null |
 
 2. 示例代码
 
@@ -217,27 +217,27 @@
 
 1. 操作符列表
 
-   | 操作符       | 功能和作用                                    |
-   | --------- | ---------------------------------------- |
-   | .         | 访问一个 bean 属性或者 Map entry                 |
-   | []        | 访问一个数组或者链表元素                             |
-   | ()        | 对子表达式分组，用来改变赋值顺序                         |
-   | ? :       | 条件语句，比如：条件 ?ifTrue:ifFalse如果条件为真，表达式值为前者，反之为后者 |
-   | +         | 数学运算符，加操作                                |
-   | -         | 数学运算符，减操作或者对一个值取反                        |
-   | *         | 数学运算符，乘操作                                |
-   | / 或 div   | 数学运算符，除操作                                |
-   | % 或 mod   | 数学运算符，模操作 ( 取余 )                         |
-   | == 或 eq   | 逻辑运算符，判断符号左右两端是否相等，如果相等返回 true ，否则返回 false |
-   | != 或 ne   | 逻辑运算符，判断符号左右两端是否不相等，如果不相等返回 true ，否则返回 false |
-   | < 或 lt    | 逻辑运算符，判断符号左边是否小于右边，如果小于返回 true ，否则返回 false |
-   | > 或 gt    | 逻辑运算符，判断符号左边是否大于右边，如果大于返回 true ，否则返回 false |
-   | <= 或 le   | 逻辑运算符，判断符号左边是否[小于]()或者等于右边，如果小于或者等于返回 true ，否则返回 false |
-   | >= 或 ge   | 逻辑运算符，判断[符号]()左边是否大于或者等于右边，如果大于或者等于返回 true ，否则返回 false |
-   | && 或 and  | 逻辑运算符，与操作赋。如果左右两边同为 true 返回 true ，否则返回 false |
+   | 操作符 | 功能和作用 |
+   | --- | --- |
+   | . | 访问一个 bean 属性或者 Map entry |
+   | \[\] | 访问一个数组或者链表元素 |
+   | \(\) | 对子表达式分组，用来改变赋值顺序 |
+   | ? : | 条件语句，比如：条件 ?ifTrue:ifFalse如果条件为真，表达式值为前者，反之为后者 |
+   | + | 数学运算符，加操作 |
+   | - | 数学运算符，减操作或者对一个值取反 |
+   | \* | 数学运算符，乘操作 |
+   | / 或 div | 数学运算符，除操作 |
+   | % 或 mod | 数学运算符，模操作 \( 取余 \) |
+   | == 或 eq | 逻辑运算符，判断符号左右两端是否相等，如果相等返回 true ，否则返回 false |
+   | != 或 ne | 逻辑运算符，判断符号左右两端是否不相等，如果不相等返回 true ，否则返回 false |
+   | &lt; 或 lt | 逻辑运算符，判断符号左边是否小于右边，如果小于返回 true ，否则返回 false |
+   | &gt; 或 gt | 逻辑运算符，判断符号左边是否大于右边，如果大于返回 true ，否则返回 false |
+   | &lt;= 或 le | 逻辑运算符，判断符号左边是否[小于]()或者等于右边，如果小于或者等于返回 true ，否则返回 false |
+   | &gt;= 或 ge | 逻辑运算符，判断[符号]()左边是否大于或者等于右边，如果大于或者等于返回 true ，否则返回 false |
+   | && 或 and | 逻辑运算符，与操作赋。如果左右两边同为 true 返回 true ，否则返回 false |
    | \|\| 或 or | 逻辑运算符，或操作赋。如果左右两边有任何一边为 true 返回 true ，否则返回 false |
-   | ! 或 not   | 逻辑运算符，非操作赋。如果对 true 取运算返回 false ，否则返回 true |
-   | empty     | 用来对一个空变量值进行判断 : null 、一个空 String 、空数组、 空 Map 、没有条目的 Collection 集合 |
+   | ! 或 not | 逻辑运算符，非操作赋。如果对 true 取运算返回 false ，否则返回 true |
+   | empty | 用来对一个空变量值进行判断 : null 、一个空 String 、空数组、 空 Map 、没有条目的 Collection 集合 |
 
 2. 算术运算符
 
@@ -245,21 +245,21 @@
    >
    > 注意：在EL表达式中的‘+’只有数学运算的功能，没有连接符的功能，它会试着把运算符两边的操作数转换为数值类型，进而进行数学加法运算，最后把结果输出。若出现${'a'+'b'}则会出现异常。
    >
-   > \${10-8} 
+   > ${10-8}
    >
-   > ${3*3} 
+   > ${3\*3}
    >
    > ${12/4}
 
 3. 关系运算符
 
-   > \> 或者 gt， 例如：${110>9}  或者 ${110 gt 9 }
+   > &gt; 或者 gt， 例如：${110&gt;9}  或者 ${110 gt 9 }
    >
-   > \>= 或者 ge， 例如：${45>=9} 或者 ${45 ge 9 }
+   > &gt;= 或者 ge， 例如：${45&gt;=9} 或者 ${45 ge 9 }
    >
-   > < 或者 lt， 例如：${4<9} 或者 ${4 lt 9 }
+   > &lt; 或者 lt， 例如：${4&lt;9} 或者 ${4 lt 9 }
    >
-   > <= 或者 le， 例如：${9<=8} 或者 ${9 le 8 }
+   > &lt;= 或者 le， 例如：${9&lt;=8} 或者 ${9 le 8 }
    >
    > == 或者 eq， 例如：${5=4} 或者 ${4 eq 4 }
    >
@@ -269,13 +269,13 @@
 
    > && 或者 and， 例如：${false && false} 或者 ${false and false }
    >
-   > || 或者 or， 例如：${true || false} 或者 ${true or false }
+   > \|\| 或者 or， 例如：${true \|\| false} 或者 ${true or false }
    >
    > ! 或者 not，例如：${!true}（相当于${false}） 或者 ${not true }
 
 5. 三元运算符
 
-   > ? :     例如：${ 3>2 ?  '是' : '不是' }
+   > ? :     例如：${ 3&gt;2 ?  '是' : '不是' }
 
 6. empty
 
@@ -295,19 +295,19 @@
 
 1. JSP有9个隐含对象，而EL也有自己的隐含对象。EL隐含对象总共有11 个
 
-   | 隐含对象             | 类型                           | 说明                                       |
-   | ---------------- | ---------------------------- | ---------------------------------------- |
-   | PageContext      | javax.servlet.ServletContext | 表示此JSP的PageContext                       |
-   | PageScope        | java.util.Map                | 取得Page范围的属性名称所对应的值                       |
-   | RequestScope     | java.util.Map                | 取得Request范围的属性名称所对应的值                    |
-   | sessionScope     | java.util.Map                | 取得Session范围的属性名称所对应的值                    |
-   | applicationScope | java.util.Map                | 取得Application范围的属性名称所对应的值                |
-   | param            | java.util.Map                | 如同ServletRequest.getParameter(String name)。回传String类型的值 |
-   | paramValues      | java.util.Map                | 如同ServletRequest.getParameterValues(String name)。回传String[]类型的值 |
-   | header           | java.util.Map                | 如同ServletRequest.getHeader(String name)。回传String类型的值 |
-   | headerValues     | java.util.Map                | 如同ServletRequest.getHeaders(String name)。回传String[]类型的值 |
-   | cookie           | java.util.Map                | 如同HttpServletRequest.getCookies()        |
-   | initParam        | java.util.Map                | 如同ServletContext.getInitParameter(String name)。回传String类型的值 |
+   | 隐含对象 | 类型 | 说明 |
+   | --- | --- | --- |
+   | PageContext | javax.servlet.ServletContext | 表示此JSP的PageContext |
+   | PageScope | java.util.Map | 取得Page范围的属性名称所对应的值 |
+   | RequestScope | java.util.Map | 取得Request范围的属性名称所对应的值 |
+   | sessionScope | java.util.Map | 取得Session范围的属性名称所对应的值 |
+   | applicationScope | java.util.Map | 取得Application范围的属性名称所对应的值 |
+   | param | java.util.Map | 如同ServletRequest.getParameter\(String name\)。回传String类型的值 |
+   | paramValues | java.util.Map | 如同ServletRequest.getParameterValues\(String name\)。回传String\[\]类型的值 |
+   | header | java.util.Map | 如同ServletRequest.getHeader\(String name\)。回传String类型的值 |
+   | headerValues | java.util.Map | 如同ServletRequest.getHeaders\(String name\)。回传String\[\]类型的值 |
+   | cookie | java.util.Map | 如同HttpServletRequest.getCookies\(\) |
+   | initParam | java.util.Map | 如同ServletContext.getInitParameter\(String name\)。回传String类型的值 |
 
    > **注意: 字符串要加双引号，不然的话EL会默认把你认为的常量当做一个变量来处理，这时如果这个变量在4个声明范围不存在的话会输出空，如果存在则输出该变量的值。**
 
@@ -394,12 +394,6 @@
    ```
 
    ​
-
-   
-
-
-
-
 
 
 
